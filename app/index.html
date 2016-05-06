@@ -40,7 +40,16 @@
         <div class="collapse navbar-collapse" id="js-navbar-collapse">
 
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#/">Home</a></li>
+            <!--i class="active"><a href="#/">Home</a></li-->
+            <li class="active"><a id="homeLink"  ui-sref="home">Home</a></li>
+            <li  ui-sref="brick">Brick
+              <ul class="nav navbar-nav">
+                <li><a id="redBrickLink" ui-sref="brick.red">Red</a></li>
+                <li><a id="blueBrickLink" ui-sref="brick.blue">Blue</a></li>
+                <li><a id="greenBrickLink" ui-sref="nrcik.green">Green</a></li>
+              </ul>
+            </li>
+            <li><a  id="cartLink" ui-sref="cart">Cart</a></li>
           </ul>
         </div>
       </div>
@@ -48,7 +57,7 @@
   </div>
 
   <div class="container">
-    <div ng-include="'views/instructions.html'"></div>
+    <!--div ng-include="'views/instructions.html'"></div-->
     <div ui-view></div>
 
     <!--div ng-include="'views/bricks.html'" ng-controller="RedBricksCtrl as brick"></div>
@@ -77,8 +86,10 @@
   <script src="scripts/controllers/red-bricks.js"></script>
   <script src="scripts/controllers/blue-bricks.js"></script>
   <script src="scripts/controllers/green-bricks.js"></script>
+  <script src="scripts/controllers/bricks.js"></script>
   <script src="scripts/controllers/cart.js"></script>
   <script src="scripts/services/purchase-manager.js"></script>
+  <script src="scripts/services/warehouse.js"></script>
   <!-- endbuild -->
 </body>
 </html>

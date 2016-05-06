@@ -11,6 +11,7 @@
 angular
   .module('routingQuizApp', ['ui.router'])
   .config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
+
     $urlRouterProvider.otherwise("/");
 
     $stateProvider
@@ -18,25 +19,30 @@ angular
       url: "/",
       templateUrl :"/views/instructions.html"
     })
-    .state('redBricks', {
-      url:"/redBricks",
+    .state('brick', {
+      url:"/brick",
       templateUrl: "/views/bricks.html",
-      controller: "RedBricksCtrl as brick"
+      controller: "BricksCtrl as brick"
     })
-    .state('greenBricks', {
-      url: "/greenBricks",
-      templateUrl: "/views/bricks.html",
-      controller: "greenBricksCtrl as brick"
+    .state('brick.red', {
+      url:"/brick/red",
+      templateUrl: "/views/redBricks.html"
+      //controller: "BricksCtrl as brick"
     })
-    .state('blueBricks', {
-      url: "/blueBricks",
-      templateUrl: "/views/bricks.html",
-      controller: "blueBricksCtrl as brick"
+    .state('brick.blue', {
+      url:"/brick/blue",
+      templateUrl: "/views/blueBricks.html"
+      //controller: "BlueBricksCtrl as brick"
+    })
+    .state('brick.green', {
+      url:"/brick/green",
+      templateUrl: "/views/greenBricks.html"
+      // controller: "GreenBricksCtrl as brick"
     })
     .state('cart', {
       url:"/cart",
       templateUrl: "/views/cart.html",
-      controller: "cartCtrl as cart"
+      controller: "CartCtrl as cart"
     });
 
   }]);
