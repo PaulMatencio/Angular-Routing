@@ -1,9 +1,23 @@
-<h2>Cart</h2>
-<ul>
-  <li ng-repeat="item in cart.info.contents">
-    {{item.count}} {{item.color}} {{item.size}}
-  </li>
-</ul>
-<p>
-  Total: {{cart.info.total}}
-</p>
+<h3>My Cart</h3>
+<table style="width:100%">
+  <tr ng-if ="cart.info.contents.length > 0">
+    <th> Count </th>
+    <th> Color </th>
+    <th> Size </th>
+    <th> Price</th>
+    <th> Return</th>
+  </tr>
+  <tr ng-repeat="(id,item) in cart.info.contents">
+    <td>{{item.count}} </td>
+    <td>{{item.color}}</td>
+    <td>{{item.size}} </td>
+    <td>{{item.price}} </td>
+    <td><button ng-click="cart.removeCart(id,item)">-</button> <td>
+  </tr>
+  <tr>
+    <th> Total Items: </th>
+    <td> {{cart.info.count}} </td>
+    <th> Total price :</th>
+    <td> {{cart.info.total}} </td>
+  </tr>
+</table>

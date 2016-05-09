@@ -12,8 +12,8 @@ angular.module('routingQuizApp')
 
     this.name = 'Green Bricks';
     this.bricks = warehouse.brick.green;
-
-    this.addToCart = function(size, price) {
-      manager.purchase('green', size, price);
+    this.count = 1;
+    this.addToCart = function(size, price, count) {
+      manager.purchaseItem('green', size, price, count);
     };
   }]);

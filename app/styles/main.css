@@ -9,6 +9,28 @@ body {
   padding: 0;
 }
 
+th,td {
+  text-align: center;
+}
+
+.menu {
+  list-style-type: none;
+  background: #3399ff;
+  padding: 5px;
+}
+.menu li {
+  font-size: 20px;
+}
+.submenu {
+  list-style-type: none;
+  background: #3399ff;
+  padding: 5px;
+
+}
+.submenu li {
+  font-size: 20px;
+}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,

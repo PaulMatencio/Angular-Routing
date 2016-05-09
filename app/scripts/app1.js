@@ -40,19 +40,6 @@ angular
       controller: "GreenBricksCtrl as brick"
     })
     */
-    .state('brick',{
-      url:"/brick/:color",
-      templateUrl: "/views/bricks.html",
-      controllerProvider: function($stateParams) {
-        var color = $stateParams.color;
-        color = color[0].toUpperCase() + color.slice(1);
-        var ctrlname= color+ "BricksCtrl";
-        console.log(ctrlname);
-        return ctrlname;
-      },
-      controllerAs : "brick"
-    })
-    /*
     .state('redBricks', {
       url:"/brick/red",
       templateUrl: "/views/redBricks.html",
@@ -88,16 +75,4 @@ angular
       templateUrl: "/views/cart.html",
       controller: "CartCtrl as cart"
     });
-    */
-    .state('cart', {
-      url:"/cart",
-      templateUrl: "/views/cart.html",
-      controller: "CartCtrl as cart"
-    })
-    .state('brick.cart', {
-      url:"/cart",
-      templateUrl: "/views/cart.html",
-      controller: "CartCtrl as cart"
-    });
-
   }]);

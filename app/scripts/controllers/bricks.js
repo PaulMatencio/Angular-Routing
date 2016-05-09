@@ -8,15 +8,13 @@
  * Controller of the routingQuizApp
  */
 angular.module('routingQuizApp')
-  .controller('BricksCtrl', ['warehouse','purchaseManager', function (warehouse, manager) {
-
+  .controller('BricksCtrl', ['$stateParams','warehouse','purchaseManager', function ($stateParams,warehouse, manager) {
+    this.name = $stateParams[0].toUpperCase() + $stateParams[0].slice(1)+ '  Bricks';
     var bricks = warehouse.brick;
-
-    this.redBricks = bricks.red ;
-    this.greenBricks = bricks.green ;
-    this.blueBricks = bricks.blue ;
-
-    this.addToCart = function(color, size, price) {
-      manager.purchase(color, size, price);
+    this.bricks = bricks[$stateParams];
+    var color = $stateParams;
+    this.count = 1;
+    this.addToCart = function( size, price) {
+      manager.purchaseItem(color, size, price, count);
     };
   }]);

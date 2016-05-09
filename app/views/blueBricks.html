@@ -4,6 +4,10 @@
     <p>Size: {{size}}</p>
     <p>Quantity: {{details.quantity}}</p>
     <p>Price: {{details.price}}</p>
-    <p><button ng-click="brick.addToCart(size, details.price)">Add to Cart</button></p>
+    <p><input type="number" name="count" min="1" max="100"  ng-required="true" ng-model="count">
+      <button ng-click="brick.addToCart(size, details.price, count)">Add to Cart</button>
+    </p>
   </li>
 </ul>
+<a  ui-sref=".cart">Cart</a>
+<div ui-view> <div>
